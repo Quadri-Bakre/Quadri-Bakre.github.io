@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadri Bakre | AV Systems Engineer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #161b22;
+            --bg-slate: #21262d;
+            --accent-mint: #00FFCC; 
+            --text-white: #ffffff;
+            --text-grey: #8b949e; 
+            --font-mono: 'Space Mono', monospace;
+            --font-apple: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            font-size: 1vw; 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 5rem; 
+        }
+
+        @media (min-width: 1920px) {
+            html { font-size: 19.2px; } 
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--accent-mint);
+            font-family: var(--font-apple); 
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 1rem; 
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: var(--accent-mint);
+            text-decoration: none;
+        }
+
+        h1, h2, h3, h4, .bold-text {
+            font-weight: 700;
+            font-family: var(--font-mono);
+            color: var(--text-white);
+        }
+
+        p {
+            font-family: var(--font-apple);
+            color: var(--text-grey);
+        }
+
+        .container {
+            width: 85%;
+            max-width: 112.5rem; 
+            margin: 0 auto;
+        }
+
+        .section-wrapper-slate { background-color: var(--bg-slate); width: 100%; padding: 6.25rem 0; }
+        .section-wrapper-dark { background-color: var(--bg-dark); width: 100%; padding: 6.25rem 0; }
+        
+        #portfolio.section-wrapper-slate { padding-top: 2.5rem; }
+
+        nav {
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            padding: 1.5rem 0; 
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(22, 27, 34, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3.75rem; 
+        }
+
+        .nav-links a {
+            transition: color 0.2s, text-decoration 0.2s; 
+            font-size: 1.38rem; 
+            font-weight: 400; 
+            font-family: var(--font-mono); 
+            text-transform: none; 
+            color: var(--accent-mint);
+        }
+
+        .nav-links a:hover { color: var(--text-white); }
+
+        .nav-links a.active {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 6px;
+        }
+
+        .hero { padding: 2.5rem 0 2.5rem; display: flex; flex-direction: column; align-items: center; }
+        .hero-title { font-size: 7rem; letter-spacing: 1.25rem; text-align: center; line-height: 1; margin-bottom: 0.625rem; margin-left: 1.25rem; color: var(--text-white); }
+        .hero-subtitle { font-size: 1.3rem; letter-spacing: 0.3rem; font-family: var(--font-mono); color: var(--text-grey); }
+        
+        .hero-content { display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 4rem; margin-top: 5rem; }
+        .hero-left-col { flex: 1; } 
+        .hero-image-container { flex: 1.5; display: flex; justify-content: center; }
+
+        .hero-philosophy {
+            color: var(--text-white); 
+            font-family: var(--font-apple); 
+            font-size: 1.25rem; 
+            font-weight: 400; 
+            line-height: 1.6;
+            width: 100%;
+            border-left: 4px solid var(--accent-mint); 
+            padding-left: 2rem;
+        }
+
+        .hero-philosophy .core-focus {
+             font-family: var(--font-apple); 
+             color: var(--text-white); 
+             font-size: 1rem;
+             margin-top: 1.5rem;
+             display: block;
+        }
+
+        .hero-image { 
+            width: 100%; 
+            height: auto;
+            max-height: 650px; 
+            object-fit: cover; 
+            display: block; 
+            border: none; 
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2); 
+        }
+        
+        .hero-btn-wrapper { width: 100%; display: flex; justify-content: center; margin-top: 3.5rem; gap: 1.5rem; flex-wrap: wrap; }
+
+        .btn-solid { background-color: var(--text-white); color: var(--bg-dark); padding: 1.25rem 2.8rem; display: inline-block; transition: all 0.2s; text-transform: uppercase; font-size: 1.1rem; font-weight: 700; font-family: var(--font-mono); letter-spacing: 0.125rem; }
+        .btn-solid:hover { background-color: var(--accent-mint); color: var(--bg-dark); }
+        .btn-outline { border: 1px solid var(--accent-mint); color: var(--accent-mint); background: transparent; padding: 1.25rem 2.8rem; text-align: center; text-transform: uppercase; font-size: 1.1rem; font-weight: 700; transition: all 0.2s; font-family: var(--font-mono); letter-spacing: 0.1rem; }
+        .btn-outline:hover { background-color: rgba(0, 255, 204, 0.1); }
+
+        .directory-box { margin-bottom: 5rem; }
+        
+        .directory-box .section-header { font-size: 4rem; margin-bottom: 1.25rem; line-height: 1.1; text-transform: uppercase; color: var(--text-white); }
+        .directory-box .section-sub { font-size: 1.1rem; margin-bottom: 5rem; max-width: 56.25rem; line-height: 1.8; color: var(--text-grey); }
+
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.125rem; }
+
+        .portfolio-img-wrapper { width: 100%; height: 15.625rem; margin-bottom: 1.25rem; overflow: hidden; background-color: #000; border: 1px solid rgba(0,255,204,0.2); }
+        .portfolio-img-wrapper img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); transform: scale(1); transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), filter 1s ease; }
+        .portfolio-card:hover .portfolio-img-wrapper img { filter: brightness(1); transform: scale(1.05); }
+        .portfolio-card h4 { font-size: 1.3rem; margin-bottom: 0.9rem; color: var(--text-white); line-height: 1.3; }
+        .portfolio-card p { font-size: 0.9rem; line-height: 1.6; color: var(--text-grey); }
+
+        .capability-card { 
+            padding: 2.5rem 2rem; 
+            display: flex; 
+            flex-direction: column; 
+            background-color: transparent; 
+            border-left: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .capability-card:hover {
+            background-color: rgba(0, 255, 204, 0.03);
+            border-left: 2px solid var(--accent-mint);
+            transform: translateY(-5px);
+        }
+        .icon-placeholder { width: 3.75rem; height: 3.75rem; margin-bottom: 1.875rem; }
+        .capability-card h3 { font-size: 2rem; margin-bottom: 1.5rem; line-height: 1.2; color: var(--text-white); }
+        .capability-card p { font-size: 1rem; margin-bottom: 3.125rem; flex-grow: 1; line-height: 1.8; color: var(--text-grey); }
+
+        .precision-section { display: grid; grid-template-columns: 3.5fr 5.5fr; gap: 5rem; align-items: stretch; }
+        .precision-image-col img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; border: 1px solid rgba(0,255,204,0.3); }
+        .precision-text-col { display: flex; flex-direction: column; justify-content: flex-start; }
+        .precision-ident { font-size: 1rem; margin-bottom: 1.25rem; color: var(--accent-mint); font-family: var(--font-mono); }
+        .precision-title { font-size: 4rem; line-height: 1.05; margin-bottom: 1.875rem; text-transform: uppercase; color: var(--text-white); }
+        .precision-desc { font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem; color: var(--text-grey); }
+        .precision-list { list-style: none; margin-bottom: 3.125rem; }
+        .precision-list li { 
+            font-size: 1.05rem; 
+            margin-bottom: 1.25rem; 
+            color: var(--text-white); 
+            font-family: var(--font-mono);
+            display: flex;
+            align-items: flex-start;
+        }
+        .precision-list li span { flex-shrink: 0; }
+        .precision-actions { display: flex; gap: 1.875rem; margin-top: auto; }
+
+        .contact-section { display: grid; grid-template-columns: 1fr 1.5fr; gap: 6.25rem; }
+        .contact-left { display: flex; flex-direction: column; gap: 2.5rem; }
+        .contact-left .lorem-block h3 { color: var(--accent-mint); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1rem; font-family: var(--font-mono); }
+        .contact-left .lorem-block p { font-size: 1.2rem; margin-top: 0.3rem; color: var(--text-white); }
+
+        .contact-form-container { border: 1px solid var(--accent-mint); padding: 3.75rem; background-color: var(--bg-slate); }
+        .contact-form-container h2 { font-size: 2.5rem; margin-bottom: 1.25rem; text-transform: uppercase; color: var(--text-white); }
+        .contact-form-container p { font-size: 1rem; margin-bottom: 3.125rem; color: var(--text-grey); }
+        .form-row { display: flex; gap: 1.875rem; margin-bottom: 1.875rem; }
+        .form-group { flex: 1; display: flex; flex-direction: column; }
+        .form-group label { font-size: 0.9rem; margin-bottom: 0.625rem; color: var(--text-white); font-family: var(--font-mono); }
+        .form-group input, .form-group select, .form-group textarea { background-color: transparent; border: 1px solid rgba(0,255,204,0.3); color: var(--text-white); padding: 1.125rem; font-family: var(--font-apple); font-size: 1rem; resize: vertical; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--accent-mint); background-color: rgba(0, 255, 204, 0.05); }
+
+        .form-group select option {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+        }
+
+        .btn-submit {
+            background-color: var(--accent-mint);
+            color: var(--bg-dark);
+            padding: 1.25rem 2.8rem;
+            display: inline-block;
+            transition: all 0.2s;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: var(--font-mono);
+            letter-spacing: 0.125rem;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+        .btn-submit:hover {
+            background-color: var(--text-white);
+        }
+
+        .marquee-wrapper { width: 100%; overflow: hidden; border-top: 1px solid var(--accent-mint); border-bottom: 1px solid var(--accent-mint); padding: 1.875rem 0; background-color: var(--bg-dark); display: flex; white-space: nowrap; margin-bottom: 3.75rem; }
+        .marquee-text { font-size: 1.5rem; font-weight: 700; color: var(--accent-mint); letter-spacing: 0.125rem; animation: marquee 40s linear infinite; font-family: var(--font-mono); }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        
+        footer { padding-bottom: 5rem; text-align: center; }
+        .social-icons { display: flex; gap: 1.25rem; justify-content: center; }
+        .social-icon { width: 2.8rem; height: 2.8rem; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; transition: transform 0.2s ease; }
+        .social-icon:hover { transform: scale(1.1); color: white; } 
+        .social-icon svg { width: 1.4rem; height: 1.4rem; fill: currentColor; }
+
+        @media (max-width: 1100px) {
+            html, body { overflow-x: hidden !important; width: 100%; font-size: 14px; }
+            .container { width: 90%; overflow-x: hidden; }
+            
+            nav { padding: 1rem 0; }
+            .nav-links { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; width: 100%; justify-content: center; }
+            .nav-links a { font-size: 1.15rem; font-weight: 700; } 
+            
+            .hero-title { font-size: 2.8rem; letter-spacing: 0.1rem; margin-left: 0; line-height: 1.2; width: 100%; word-wrap: break-word; }
+            .hero-subtitle { font-size: 0.85rem; letter-spacing: 0.05rem; margin-bottom: 3rem; }
+            .directory-box .section-header { font-size: 2rem; }
+            .precision-title { font-size: 2rem; }
+            
+            .hero-philosophy { font-size: 1.1rem; padding-left: 1.5rem; border-left-width: 3px; }
+            .hero-philosophy .core-focus { font-size: 0.95rem; margin-top: 1.5rem; }
+
+            p, .capability-card p, .portfolio-card p, .precision-desc, .contact-form-container p, .directory-box .section-sub { 
+                font-size: 0.95rem; line-height: 1.6; 
+            }
+            
+            .hero-content { flex-direction: column; gap: 3rem; margin-top: 3rem; }
+            .hero-left-col, .hero-image-container { max-width: 100%; flex: auto; }
+            .hero-image { max-height: 400px; }
+
+            .precision-section { grid-template-columns: 1fr; gap: 2.5rem; }
+            .precision-image-col { width: 100%; height: 300px; }
+            .precision-text-col { width: 100%; flex: auto; }
+            .contact-section { grid-template-columns: 1fr; gap: 3rem; }
+            .grid-4, .grid-3, .gallery-grid, .content-grid, .process-grid { grid-template-columns: 1fr; gap: 2rem; }
+            
+            .directory-box { margin-bottom: 3rem; }
+            .capability-card { padding: 1.5rem; }
+            .contact-form-container { padding: 1.5rem 1rem; }
+            .btn-solid, .btn-outline, .btn-submit { padding: 1rem; font-size: 0.95rem; width: 100%; text-align: center; } 
+            .precision-actions { flex-direction: column; gap: 1rem; }
+            .marquee-text { font-size: 1.1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2.2rem; }
+            .nav-links a { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container">
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="portfolio.html">Portfolio Page</a>
+            <a href="https://quadavpro.com">Blog</a>
+        </div>
+    </nav>
+
+    <div class="section-wrapper-dark" style="padding-top: 0;">
+        <div class="container hero">
+            <h1 class="hero-title">QUADRI BAKRE</h1>
+            <div class="hero-subtitle" style="text-align: center;">AV SYSTEMS COMMISSIONING | AUTOMATION PROGRAMMER | QA & TEST ENGINEER</div>
+            
+            <div class="hero-content">
+                <div class="hero-left-col">
+                    <div class="hero-philosophy">
+                        I bridge the gap between physical infrastructure and software control. From building out meticulously dressed racks and lighting panels to writing the custom scripts that make them run flawlessly.
+                        <span class="core-focus">
+                            <span style="color: var(--accent-mint); font-family: var(--font-mono); font-weight: 700; margin-right: 0.5rem;">CORE SKILLS:</span>System Commissioning • Networking • QA & Testing • Programming • Troubleshooting • Documentation • Open-Source AV Software Development
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="hero-image-container">
+                    <img src="images/living room.jpg" alt="AV Rack Interface" class="hero-image">
+                </div>
+            </div>
+
+            <div class="hero-btn-wrapper">
+                <a href="#portfolio" class="btn-solid">VIEW PORTFOLIO &darr;</a>
+                <a href="https://github.com/Quadri-Bakre/project-afara" target="_blank" rel="noopener noreferrer" class="btn-outline">VIEW OPEN SOURCE TOOL &nearr;</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio" class="section-wrapper-slate">
+        <div class="container">
+            <div class="directory-box">
+                <h2 class="section-header">PROJECT PORTFOLIO</h2>
+                <p class="section-sub">Welcome to my project archive. Here you will find a selection of my work in audiovisual installations, control programming, documentations and open-source software deployments.</p>
+                
+                <div class="grid-3" style="margin-bottom: 0;">
+                    
+                    <div class="portfolio-card">
+                        <a href="portfolio.html#racks">
+                            <div class="portfolio-img-wrapper">
+                                <img src="images/rack fabrication.jpg" alt="AV Rack Cable Management">
+                            </div>
+                        </a>
+                        <h4 class="bold-text">Rack Build & Fabrication</h4>
+                        <p>AV equipment racks built with a focus on pristine cable dressing, strict signal separation, thermal management, and long-term serviceability.</p>
+                        <a href="portfolio.html#racks" style="font-size: 0.9rem; font-weight: 700; margin-top: 1rem; display: inline-block; font-family: var(--font-mono);">VIEW GALLERY &rarr;</a>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <a href="portfolio.html#programming">
+                            <div class="portfolio-img-wrapper">
+                                <img src="images/touch panel.jpg" alt="AV Programming Setup">
+                            </div>
+                        </a>
+                        <h4 class="bold-text">System Programming & UI</h4>
+                        <p>Custom control logic and intuitive touch panel interfaces designed to make complex backend routing simple for end-users. (Crestron / Control4 / Lutron / Loxone)</p>
+                        <a href="portfolio.html#programming" style="font-size: 0.9rem; font-weight: 700; margin-top: 1rem; display: inline-block; font-family: var(--font-mono);">VIEW CODE & UI &rarr;</a>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <a href="portfolio.html#lighting">
+                            <div class="portfolio-img-wrapper">
+                                <img src="images/lighting panel.jpg" alt="Lighting Panel Build">
+                            </div>
+                        </a>
+                        <h4 class="bold-text">Lighting Control Panels</h4>
+                        <p>Meticulously wired Lutron lighting panel with Lutron and DALI modules, WCIs, and ensuring safe, reliable, and noise-free integration with primary AV systems.</p>
+                        <a href="portfolio.html#lighting" style="font-size: 0.9rem; font-weight: 700; margin-top: 1rem; display: inline-block; font-family: var(--font-mono);">VIEW GALLERY &rarr;</a>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <a href="portfolio.html#installations">
+                            <div class="portfolio-img-wrapper">
+                                <img src="images/tv installs.jpg" alt="Finished AV Installation">
+                            </div>
+                        </a>
+                        <h4 class="bold-text">Installations</h4>
+                        <p>Installations and commissioning of high-performance spaces, from cinemas, residential, meeting rooms boardrooms to corporate environments.</p>
+                        <a href="portfolio.html#installations" style="font-size: 0.9rem; font-weight: 700; margin-top: 1rem; display: inline-block; font-family: var(--font-mono);">VIEW CASE STUDIES &rarr;</a>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <a href="https://github.com/Quadri-Bakre/project-afara" target="_blank" rel="noopener noreferrer">
+                            <div class="portfolio-img-wrapper">
+                                <img src="images/open source.png" alt="Open Source GitHub Software">
+                            </div>
+                        </a>
+                        <h4 class="bold-text">Open-Source Commissioning</h4>
+                        <p>Custom software architecture available on GitHub. Building automation tools and scripts to reduce manual commissioning time and eliminate human error.</p>
+                        <a href="https://github.com/Quadri-Bakre/project-afara" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem; font-weight: 700; margin-top: 1rem; display: inline-block; font-family: var(--font-mono);">VIEW REPOSITORY &nearr;</a>
+                    </div>
+
+                    <div class="portfolio-card">
+                        <a href="https://quadavpro.com">
+                            <div class="portfolio-img-wrapper">
+                                <img src="images/quadavpro.png" alt="AV Engineering Blog">
+                            </div>
+                        </a>
+                        <h4 class="bold-text">QuadAVpro (Blog)</h4>
+                        <p>Engineering Insights, technical writing and deep dives into AV engineering concepts. Documenting signal flow theory, programming tutorials, and industry best practices.</p>
+                        <a href="https://quadavpro.com" style="font-size: 0.9rem; font-weight: 700; margin-top: 1rem; display: inline-block; font-family: var(--font-mono);">READ ARTICLES &rarr;</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-wrapper-dark">
+        <div class="container precision-section">
+            <div class="precision-image-col">
+                <img src="images/Quadri Bakre.JPG" alt="Quadri Bakre - AV Systems Engineer">
+            </div>
+            <div class="precision-text-col">
+                <div class="precision-ident bold-text">AV SYSTEMS ENNGINEER | AV PROGRAMMER | NETWORK ENGINEER | QA & TESTING ENGINEER</div>
+                <h2 class="precision-title">PRECISION AV COMMISSIONING<br> & CONTROL SYSTEMS</h2>
+                <p class="precision-desc">Providing high-integrity engineering solutions for audiovisual infrastructure. I specialize in bridging technical complexity with operational efficiency, delivering robust system commissioning, advanced control logic, and bespoke software interfaces designed for seamless global deployments.</p>
+                
+                <ul class="precision-list">
+                    <li class="bold-text"><span style="color: var(--accent-mint); margin-right: 0.5rem;">[+]</span> PROGRAMMING: CRESTRON, CONTROL4, LUTRON, QSC LOXONE, POLARBEAR</li>
+                    <li class="bold-text"><span style="color: var(--accent-mint); margin-right: 0.5rem;">[+]</span> SYSTEM VALIDATION & CERTIFIED PERFORMANCE TUNING</li>
+                    <li class="bold-text"><span style="color: var(--accent-mint); margin-right: 0.5rem;">[+]</span> CUSTOM SOFTWARE ARCHITECTURE & AUTOMATION TOOLS</li>
+                    <li class="bold-text"><span style="color: var(--accent-mint); margin-right: 0.5rem;">[+]</span> TECHNICAL AUDITS, DOCUMENTATION & REPORTING</li>
+                </ul>
+                
+                <div class="precision-actions">
+                    <a href="#" class="btn-solid">DOWNLOAD CV</a>
+                    <a href="#contact" class="btn-outline">INITIATE INQUIRY</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-wrapper-slate">
+        <div class="container">
+            <h2 class="section-header" style="margin-bottom: 5rem; color: var(--text-white);">CORE CAPABILITIES</h2>
+            
+            <div class="grid-3">
+                <div class="capability-card">
+                    <div class="icon-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>AV COMMISSIONING</h3>
+                    <p>A successful project ends with a perfect handover. My commissioning process bridges the gap between installation and operation, deeply testing network routing, audio tuning, and control logic.</p>
+                    <a href="av-commissioning.html" class="btn-outline" style="border: none; padding-left: 0; text-align: left;">VIEW METHODOLOGY &rarr;</a>
+                </div>
+                
+                <div class="capability-card">
+                    <div class="icon-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
+                            <polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h3>AV<br>PROGRAMMING</h3>
+                    <p>Bespoke logic design for enterprise control platforms. Specialized in Crestron, Q-SYS, and Extron ecosystems, delivering intuitive UI/UX for commercial and high-end residential command centers.</p>
+                    <a href="av-programming.html" class="btn-outline" style="border: none; padding-left: 0; text-align: left;">SYSTEM LOGIC &rarr;</a>
+                </div>
+
+                <div class="capability-card">
+                    <div class="icon-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
+                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>SOFTWARE<br>ENGINEERING</h3>
+                    <p>Development of custom commissioning tools and automation scripts. Engineering proprietary software solutions that optimize hardware deployment and system monitoring workflows.</p>
+                    <a href="software-engineering.html" class="btn-outline" style="border: none; padding-left: 0; text-align: left;">DEV REPOSITORY &rarr;</a>
+                </div>
+
+                <div class="capability-card">
+                    <div class="icon-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
+                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line><line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3>INFRASTRUCTURE</h3>
+                    <p>Construction of mission-critical AV infrastructure, including meticulous rack fabrication. Focused on thermal management, strict high/low voltage segregation, and pristine cable dressing.</p>
+                    <a href="infrastructure.html" class="btn-outline" style="border: none; padding-left: 0; text-align: left;">HARDWARE BUILDS &rarr;</a>
+                </div>
+
+                <div class="capability-card">
+                    <div class="icon-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>QA & SYSTEM<br>TESTING</h3>
+                    <p>Rigorous third-party auditing and fault-finding. Systematic verification of signal flow, latency, and hardware operability to guarantee compliance with AVIXA standards prior to final sign-off.</p>
+                    <a href="qa-testing.html" class="btn-outline" style="border: none; padding-left: 0; text-align: left;">TESTING PROTOCOLS &rarr;</a>
+                </div>
+
+                <div class="capability-card">
+                    <div class="icon-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3>NETWORK<br>ARCHITECTURE</h3>
+                    <p>Enterprise-grade AV-over-IP configuration. Designing and deploying robust network topologies, managing Dante domains, multicast routing, and switch configurations for high-bandwidth media.</p>
+                    <a href="network-architecture.html" class="btn-outline" style="border: none; padding-left: 0; text-align: left;">NETWORK DESIGN &rarr;</a>
+                </div>
+
+                <div class="capability-card">
+                    <div class="icon-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </div>
+                    <h3>TROUBLESHOOTING</h3>
+                    <p>Rapid isolation and resolution of complex system faults. Expert-level diagnostics across signal paths, control logic, and network layers to restore critical environments to full operational status.</p>
+                    <a href="troubleshooting.html" class="btn-outline" style="border: none; padding-left: 0; text-align: left;">DIAGNOSTIC PROTOCOLS &rarr;</a>
+                </div>
+
+                <div class="capability-card">
+                    <div class="icon-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3>DOCUMENTATION</h3>
+                    <p>Delivery of comprehensive system schematics, IP schedules, and AS-BUILT drawings. Ensuring strict adherence to operational standards and facilitating long-term maintenance cycles.</p>
+                    <a href="documentation.html" class="btn-outline" style="border: none; padding-left: 0; text-align: left;">VIEW SCHEMATICS &rarr;</a>
+                </div>
+
+                <div class="capability-card">
+                    <div class="icon-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>END USER<br>TRAINING</h3>
+                    <p>Bridging the gap between engineering and daily operation. Providing clear, tailored training sessions and quick-reference guides to ensure clients confidently operate complex AV environments.</p>
+                    <a href="user-training.html" class="btn-outline" style="border: none; padding-left: 0; text-align: left;">TRAINING MODULES &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="section-wrapper-dark">
+        <div class="container contact-section">
+            
+            <div class="contact-left">
+                <h2 class="section-header" style="text-transform: uppercase; font-size: 3.5rem; line-height: 1.1; border-bottom: 1px solid rgba(0,255,204,0.3); padding-bottom: 1.25rem; margin-bottom: 2.5rem; color: var(--text-white);">Get In Touch.</h2>
+                
+                <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem; color: var(--text-grey);">
+                    Have questions about a specific rack build, my open-source AV tools, or system programming workflows? I am always open to connecting with industry peers to discuss AV engineering, control logic, and tech integration. Drop me a message below.
+                </p>
+
+                <div class="lorem-block" style="margin-bottom: 1.5rem;">
+                    <h3>Current Focus</h3>
+                    <p class="bold-text">System Commissioning, Programming, AV Engineering, Networking, QA & Testing and Open-Source Dev</p>
+                </div>
+                
+                <div class="lorem-block" style="margin-bottom: 1.5rem;">
+                    <h3>Direct Email</h3>
+                    <p class="bold-text">
+                        <a href="mailto:hello@quadribakre.com" style="color: var(--text-white); transition: color 0.2s;">hello@quadribakre.com</a>
+                    </p>
+                </div>
+                
+                <div class="lorem-block">
+                    <h3>Base of Operations</h3>
+                    <p class="bold-text" style="color: var(--text-white);">United Kingdom</p>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <h2>Send A Message</h2>
+                <p>Reach out with general questions, thoughts on my engineering blog, or feedback regarding my GitHub repositories.</p>
+                
+                <form action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
+                    
+                    <input type="hidden" name="access_key" value="00575ca7-0cd8-4cc7-bb08-80053ef7bff9">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" name="firstName" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" name="lastName" placeholder="Enter your last name" required>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.875rem;">
+                        <label>Email Address *</label>
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.875rem;">
+                        <label>Topic *</label>
+                        <select name="topic" required>
+                            <option value="" disabled selected hidden>Select a topic...</option>
+                            <option value="general">General Question / Networking</option>
+                            <option value="opensource">Open-Source Software / GitHub</option>
+                            <option value="commissioning">AV Commissioning</option>
+                            <option value="programming">System Programming</option>
+                            <option value="blog">Blog Feedback</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message *</label>
+                        <textarea name="message" rows="5" placeholder="How can I help you?" required></textarea>
+                    </div>
+
+                    <div class="h-captcha" data-captcha="true" style="margin-top: 1.5rem;"></div>
+
+                    <button type="submit" class="btn-submit">SEND &rarr;</button>
+
+                    <p style="font-size: 0.8rem; color: var(--text-grey); margin-top: 1.5rem; text-align: center; font-family: var(--font-apple);">
+                        By submitting this form, you consent to having this website process your information to respond to your inquiry in accordance with our <a href="privacy-policy.html" style="text-decoration: underline;">Privacy Policy</a>.
+                    </p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <footer style="background-color: var(--bg-slate);">
+        <div class="marquee-wrapper" style="background-color: var(--bg-slate);">
+            <div class="marquee-text bold-text" style="color: var(--text-white);">
+                AV COMMISSIONING // AV PROGRAMMING // SOFTWARE ENGINEERING // INFRASTRUCTURE // QA & SYSTEM TESTING // NETWORK ARCHITECTURE // TROUBLESHOOTING // DOCUMENTATION // END USER TRAINING // AV COMMISSIONING // AV PROGRAMMING // SOFTWARE ENGINEERING // INFRASTRUCTURE // QA & SYSTEM TESTING // NETWORK ARCHITECTURE // TROUBLESHOOTING // DOCUMENTATION // END USER TRAINING //
+            </div>
+        </div>
+
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--accent-mint); padding-top: 2.5rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <p style="color: var(--text-white); font-weight: 800; font-family: var(--font-mono); line-height: 1.2; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1rem;">
+                    Quadri Bakre
+                </p>
+            </div>
+            
+            <div style="text-align: center;">
+                <p class="bold-text" style="font-size: 1rem; color: var(--text-grey);">&copy; 2026 Quadri Bakre. All Rights Reserved. | <a href="privacy-policy.html" style="color: var(--text-grey); text-decoration: underline;">Privacy Policy</a></p>
+                <p class="bold-text" style="font-size: 1rem; margin-top: 0.3rem; color: var(--accent-mint);">STATUS: OPERATIONAL // VER: 2.4.0</p>
+            </div>
+            
+            <div class="social-icons">
+                <a href="#" class="social-icon" style="background-color: #1877F2;">
+                    <svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                </a>
+                <a href="#" class="social-icon" style="background-color: #000000; border: 1px solid rgba(255,255,255,0.2);">
+                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="#" class="social-icon" style="background-color: #0A66C2;">
+                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.844-3.037-1.846 0-2.128 1.442-2.128 2.939v5.667H9.366V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="#" class="social-icon" style="background-color: #000000; border: 1px solid rgba(255,255,255,0.2);">
+                    <svg viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42c1.87 0 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                </a>
+                <a href="https://github.com/Quadri-Bakre" target="_blank" rel="noopener noreferrer" class="social-icon" style="background-color: #000000; border: 1px solid rgba(255,255,255,0.2);">
+                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626-0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+    
+    <script>
+        window.addEventListener('pageshow', function() {
+            const contactForm = document.querySelector('form');
+            if (contactForm) {
+                contactForm.reset();
+            }
+        });
+    </script>
+</body>
+</html>
