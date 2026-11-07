@@ -2,21 +2,75 @@
 # Change something here once and every page picks it up.
 
 name: Quadri Bakre
-headline: AV Systems Engineer        # shown in the browser tab on the home page
+headline: Network & AV Systems Engineer   # shown in the browser tab on the home page
 email: me@quadribakre.com
 location: United Kingdom
 
 # Small status line in the footer
 footer_status: "STATUS: OPERATIONAL // VER: 2.4.0"
 
+# ---------- Home page: hero ----------
+strapline: "NETWORK ENGINEERING | AV SYSTEMS | CONTROL PROGRAMMING | COMMISSIONING & QA"
+
+intro: >-
+  I design, build and commission the networks and AV systems behind high-end homes
+  and private yachts: how the network fits together (VLANs, IP addressing, multicast
+  and QoS), the rack builds and terminations, the control programming, and the testing
+  that proves it all works before handover. Ten years in, from leading installation
+  teams in Lagos to luxury residential and marine projects in the UK.
+
+core_skills:
+  - Network design
+  - AV-over-IP (Dante, AES67, Crestron NAX)
+  - Control programming (Crestron Home, Control4, Lutron)
+  - Rack builds and terminations
+  - Commissioning and QA
+  - Documentation
+  - Python automation
+
+hero_image: /assets/images/living room.jpg
+hero_image_alt: Living room with a wall-mounted TV and integrated AV
+
+# ---------- Home page: about ----------
+about_ident: "SENIOR SYSTEMS COMMISSIONING, TESTING & QA ENGINEER"
+about_title: "NETWORKS AND AV, BUILT AND COMMISSIONED RIGHT"
+about_text: >-
+  I'm a network and AV systems engineer with ten years of hands-on experience in the
+  UK and Nigeria. At Equippd I work on high-end residential properties and private yachts,
+  designing how the network and systems work together, then configuring, programming
+  and commissioning both the network and the AV and control systems, and handing over
+  with as-built records and configuration backups. Before moving to the UK I spent seven
+  years in Lagos installing, building and commissioning AV, control and network systems
+  for homes, hotels and conference facilities.
+
+# The four blocks beside the About text (label, then detail)
+skills_grid:
+  - label: NETWORK DESIGN
+    detail: VLANs, Layer 3 switching, enterprise Wi-Fi, dual-WAN
+  - label: AV-OVER-IP
+    detail: Dante, AES67, Crestron NAX, multicast, QoS, PTP
+  - label: CONTROL
+    detail: Crestron Home, Control4, Lutron, Loxone
+  - label: COMMISSIONING
+    detail: Test schedules, as-built records, config backups
+
+# Leave empty until the web CV is ready; the Download CV button only shows when this is set
+cv_file: ""
+
+# ---------- Contact section ----------
+current_focus: Network design, AV-over-IP, control programming, commissioning and QA
+
 # Words that scroll across the footer (shown twice so the loop looks continuous)
 marquee:
+  - NETWORK ARCHITECTURE
   - AV COMMISSIONING
   - AV PROGRAMMING
-  - SOFTWARE ENGINEERING
+  - NETWORK SECURITY
+  - WIRELESS & CONNECTIVITY
   - INFRASTRUCTURE
   - QA & SYSTEM TESTING
-  - NETWORK ARCHITECTURE
   - TROUBLESHOOTING
+  - SYSTEMS INTEGRATION
+  - AUTOMATION & SCRIPTING
   - DOCUMENTATION
   - END USER TRAINING

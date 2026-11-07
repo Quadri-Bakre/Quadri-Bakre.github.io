@@ -1,0 +1,27 @@
+# Employment history, newest first.
+# Each job lists its role(s) and a short summary. Dates are optional:
+# add "dates:" under a job or role and they'll appear on the site.
+
+- company: Equippd Limited
+  location: Surrey, UK
+  roles:
+    - title: Senior Systems Commissioning, Testing & QA Engineer
+  summary: Network, AV and control for high-end residential properties and private yachts. Network design, configuration, programming, commissioning and handover.
+
+- company: Cloudtoch Integrations
+  location: Lagos, Nigeria
+  roles:
+    - title: Audiovisual (AV) and IT Engineer
+  summary: Wired and wireless networks and structured cabling for integrated AV and smart-home projects; Control4, Crestron and Loxone integration; site surveys, specifications and cost estimates; terminations, cable testing and rack builds.
+
+- company: Teqnobit Solutions
+  location: Lagos, Nigeria
+  roles:
+    - title: Senior AV Technician
+  summary: Led installation teams across residential estates, hotels and multi-room conference facilities; designed structured cabling layouts and built equipment racks.
+
+- company: Tolani Nigeria Enterprises
+  location: Lagos, Nigeria
+  roles:
+    - title: Technical Sales Assistant
+  summary: Sold technology products, advised clients on choosing the right equipment for their needs and kept stock records.

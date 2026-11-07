@@ -1,0 +1,34 @@
+# Certifications, training and education, in groups.
+# Add a new line under "items" to add one. Certificate numbers are kept off the site.
+
+groups:
+  - name: Networking, IT and AV-over-IP
+    items:
+      - ITIL 4 Foundation in IT Service Management · PeopleCert
+      - Dante Certification Level 2 · Audinate
+
+  - name: AV and control systems
+    items:
+      - Crestron Commercial Design and Residential Design Certifications
+      - Crestron Commercial Technician and Residential Technician Certifications
+      - Control4 Associate Installer
+      - AVIXA AV Technologist Certificate
+      - QSC
+      - Loxone Qualification Training
+      - Crestron Programming
+      - Control4 Automation Programmer
+
+  - name: Training
+    items:
+      - AVIXA AV Infrastructure Essentials
+      - AVIXA Microsoft Teams Rooms Training
+
+  - name: Site safety
+    items:
+      - IPAF Powered Access Operator, categories 3a and 3b
+      - ECS card holder
+
+note: Certificates available to verify on request.
+
+education:
+  - B.Tech, Urban and Regional Planning · Federal University of Technology, Akure

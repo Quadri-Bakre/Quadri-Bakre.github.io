@@ -6,23 +6,21 @@ contact_form: true
 
     <div class="section-wrapper-dark" style="padding-top: 0;">
         <div class="container hero">
-            <h1 class="hero-title">QUADRI BAKRE</h1>
-            <div class="hero-subtitle" style="text-align: center;">AV SYSTEMS COMMISSIONING | AV PROGRAMMING | NETWORK ENGINEERING | QA & TESTING
-            
-            </div>
-            
+            <h1 class="hero-title">{{ site.data.profile.name | upcase }}</h1>
+            <div class="hero-subtitle" style="text-align: center;">{{ site.data.profile.strapline }}</div>
+
             <div class="hero-content">
                 <div class="hero-left-col">
                     <div class="hero-philosophy">
-                        I bridge the gap between physical infrastructure and software control. From building out meticulously dressed racks and lighting panels, programming, commissioning and designing the network with security in mind to writing the custom scripts that make them run flawlessly.
+                        {{ site.data.profile.intro }}
                         <span class="core-focus">
-                            <span style="color: var(--accent-mint); font-family: var(--font-mono); font-weight: 700; margin-right: 0.5rem;">CORE SKILLS:</span>System Commissioning • Networking • QA & Testing • Programming • Troubleshooting • Documentation • Open-Source AV Software Development
+                            <span style="color: var(--accent-mint); font-family: var(--font-mono); font-weight: 700; margin-right: 0.5rem;">CORE SKILLS:</span>{{ site.data.profile.core_skills | join: " • " }}
                         </span>
                     </div>
                 </div>
-                
+
                 <div class="hero-image-container">
-                    <img src="/assets/images/living room.jpg" alt="AV Rack Interface" class="hero-image">
+                    <img src="{{ site.data.profile.hero_image }}" alt="{{ site.data.profile.hero_image_alt }}" class="hero-image">
                 </div>
             </div>
 
@@ -115,23 +113,27 @@ contact_form: true
     <div class="section-wrapper-dark">
         <div class="container precision-section">
             <div class="precision-image-col">
-                <img src="/assets/images/Quadri Bakre.JPG" alt="Quadri Bakre - AV Systems Engineer">
+                <img src="/assets/images/Quadri Bakre.JPG" alt="{{ site.data.profile.name }}, {{ site.data.profile.headline }}">
             </div>
             <div class="precision-text-col">
-                <div class="precision-ident bold-text">AV SYSTEMS ENGINEER | AV PROGRAMMING | NETWORK ENGINEERING | QA & TESTING</div>
-                <h2 class="precision-title">PRECISION AV COMMISSIONING<br> & CONTROL SYSTEMS</h2>
-                <p class="precision-desc">Providing high-integrity engineering solutions for audiovisual infrastructure. I specialize in bridging technical complexity with operational efficiency, delivering robust system commissioning, advanced control logic, and bespoke software interfaces designed for seamless global deployments.</p>
-                
-                <ul class="precision-list">
-                    <li class="bold-text"><span style="color: var(--accent-mint); margin-right: 0.5rem;">[+]</span> PROGRAMMING: CRESTRON, CONTROL4, LUTRON, QSC, LOXONE, POLARBEAR</li>
-                    <li class="bold-text"><span style="color: var(--accent-mint); margin-right: 0.5rem;">[+]</span> SYSTEM VALIDATION & CERTIFIED PERFORMANCE TUNING</li>
-                    <li class="bold-text"><span style="color: var(--accent-mint); margin-right: 0.5rem;">[+]</span> CUSTOM SOFTWARE ARCHITECTURE & AUTOMATION TOOLS</li>
-                    <li class="bold-text"><span style="color: var(--accent-mint); margin-right: 0.5rem;">[+]</span> TECHNICAL AUDITS, DOCUMENTATION & REPORTING</li>
-                </ul>
-                
+                <div class="precision-ident bold-text">{{ site.data.profile.about_ident }}</div>
+                <h2 class="precision-title">{{ site.data.profile.about_title }}</h2>
+                <p class="precision-desc">{{ site.data.profile.about_text }}</p>
+
+                <div class="skills-grid">
+                    {%- for block in site.data.profile.skills_grid %}
+                    <div class="skills-block">
+                        <h3>{{ block.label }}</h3>
+                        <p>{{ block.detail }}</p>
+                    </div>
+                    {%- endfor %}
+                </div>
+
                 <div class="precision-actions">
-                    <a href="#" class="btn-solid">DOWNLOAD CV</a>
-                    <a href="#contact" class="btn-outline">INITIATE INQUIRY</a>
+                    {%- if site.data.profile.cv_file != "" %}
+                    <a href="{{ site.data.profile.cv_file }}" class="btn-solid">DOWNLOAD CV</a>
+                    {%- endif %}
+                    <a href="#contact" class="btn-outline">GET IN TOUCH</a>
                 </div>
             </div>
         </div>
@@ -142,100 +144,73 @@ contact_form: true
             <h2 class="section-header" style="margin-bottom: 5rem; color: var(--text-white);">CORE CAPABILITIES</h2>
             
             <div class="grid-3">
+                {%- for card in site.data.capabilities %}
                 <div class="capability-card">
                     <div class="icon-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;" aria-hidden="true">
+                            {% include icons/cap-{{ card.icon }}.svg %}
                         </svg>
                     </div>
-                    <h3>AV COMMISSIONING</h3>
-                    <p>A successful project ends with a perfect handover. My commissioning process bridges the gap between installation and operation, deeply testing network routing, audio tuning, and control logic.</p>
+                    <h3>{{ card.title }}</h3>
+                    <p>{{ card.text }}</p>
                 </div>
-                
-                <div class="capability-card">
-                    <div class="icon-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
-                            <polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>
-                        </svg>
+                {%- endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div id="experience" class="section-wrapper-dark">
+        <div class="container">
+            <h2 class="section-header" style="margin-bottom: 4rem; color: var(--text-white);">EXPERIENCE & CERTIFICATIONS</h2>
+
+            <div class="experience-section">
+                <div class="timeline">
+                    {%- for job in site.data.experience %}
+                    <div class="timeline-item">
+                        {%- if job.dates %}
+                        <span class="timeline-dates">{{ job.dates }}</span>
+                        {%- endif %}
+                        <h3>{{ job.company }}</h3>
+                        <span class="timeline-location">{{ job.location }}</span>
+                        <ul class="timeline-roles">
+                            {%- for role in job.roles %}
+                            <li>{{ role.title }}{% if role.dates %} <span>· {{ role.dates }}</span>{% endif %}</li>
+                            {%- endfor %}
+                        </ul>
+                        {%- if job.summary %}
+                        <p>{{ job.summary }}</p>
+                        {%- endif %}
                     </div>
-                    <h3>AV<br>PROGRAMMING</h3>
-                    <p>Bespoke logic design for enterprise control platforms. Specialized in Crestron, Q-SYS, and Extron ecosystems, delivering intuitive UI/UX for commercial and high-end residential command centers.</p>
+                    {%- endfor %}
                 </div>
 
-                <div class="capability-card">
-                    <div class="icon-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
-                            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                        </svg>
+                <div class="certifications">
+                    {%- for group in site.data.certifications.groups %}
+                    <div class="cert-group">
+                        <h3>{{ group.name }}</h3>
+                        <ul class="tech-list">
+                            {%- for item in group.items %}
+                            <li>{{ item }}</li>
+                            {%- endfor %}
+                        </ul>
                     </div>
-                    <h3>SOFTWARE<br>ENGINEERING</h3>
-                    <p>Development of custom commissioning tools and automation scripts. Engineering proprietary software solutions that optimize hardware deployment and system monitoring workflows.</p>
-                </div>
+                    {%- endfor %}
 
-                <div class="capability-card">
-                    <div class="icon-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
-                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="4" y1="6" x2="20" y2="6"></line><line x1="4" y1="18" x2="20" y2="18"></line><line x1="8" y1="12" x2="16" y2="12"></line>
-                        </svg>
+                    <div class="cert-group">
+                        <h3>Education</h3>
+                        <ul class="tech-list">
+                            {%- for item in site.data.certifications.education %}
+                            <li>{{ item }}</li>
+                            {%- endfor %}
+                        </ul>
                     </div>
-                    <h3>INFRASTRUCTURE</h3>
-                    <p>Construction of mission-critical AV infrastructure, including meticulous rack fabrication. Focused on thermal management, strict high/low voltage segregation, and pristine cable dressing.</p>
-                </div>
-
-                <div class="capability-card">
-                    <div class="icon-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                    </div>
-                    <h3>QA & SYSTEM<br>TESTING</h3>
-                    <p>Rigorous third-party auditing and fault-finding. Systematic verification of signal flow, latency, and hardware operability to guarantee compliance with AVIXA standards prior to final sign-off.</p>
-                </div>
-
-                <div class="capability-card">
-                    <div class="icon-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline>
-                        </svg>
-                    </div>
-                    <h3>NETWORK<br>ARCHITECTURE</h3>
-                    <p>Enterprise-grade AV-over-IP configuration. Designing and deploying robust network topologies, managing Dante domains, multicast routing, and switch configurations for high-bandwidth media.</p>
-                </div>
-
-                <div class="capability-card">
-                    <div class="icon-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                        </svg>
-                    </div>
-                    <h3>TROUBLESHOOTING</h3>
-                    <p>Rapid isolation and resolution of complex system faults. Expert-level diagnostics across signal paths, control logic, and network layers to restore critical environments to full operational status.</p>
-                </div>
-
-                <div class="capability-card">
-                    <div class="icon-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline>
-                        </svg>
-                    </div>
-                    <h3>DOCUMENTATION</h3>
-                    <p>Delivery of comprehensive system schematics, IP schedules, and AS-BUILT drawings. Ensuring strict adherence to operational standards and facilitating long-term maintenance cycles.</p>
-                </div>
-
-                <div class="capability-card">
-                    <div class="icon-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                    </div>
-                    <h3>END USER<br>TRAINING</h3>
-                    <p>Bridging the gap between engineering and daily operation. Providing clear, tailored training sessions and quick-reference guides to ensure clients confidently operate complex AV environments.</p>
+                    <p class="cert-note">{{ site.data.certifications.note }}</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="contact" class="section-wrapper-dark">
+    <div id="contact" class="section-wrapper-slate">
         <div class="container contact-section">
             
             <div class="contact-left">
@@ -247,7 +222,7 @@ contact_form: true
 
                 <div class="lorem-block" style="margin-bottom: 1.5rem;">
                     <h3>Current Focus</h3>
-                    <p class="bold-text">System Commissioning, Programming, AV Engineering, Networking, QA & Testing and Open-Source Dev</p>
+                    <p class="bold-text">{{ site.data.profile.current_focus }}</p>
                 </div>
                 
                 <div class="lorem-block" style="margin-bottom: 1.5rem;">
@@ -259,7 +234,7 @@ contact_form: true
                 
                 <div class="lorem-block">
                     <h3>Base of Operations</h3>
-                    <p class="bold-text" style="color: var(--text-white);">United Kingdom</p>
+                    <p class="bold-text" style="color: var(--text-white);">{{ site.data.profile.location }}</p>
                 </div>
             </div>
             
