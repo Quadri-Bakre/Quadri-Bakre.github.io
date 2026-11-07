@@ -27,19 +27,23 @@ layout: default
             <img src="{{ page.hero }}" alt="{{ page.hero_alt }}"{% if page.hero_position %} style="object-position: {{ page.hero_position }};"{% endif %}>
         </div>
 
-        <div class="cs-body-wrapper">
+        {%- assign has_sidebar = false %}{% if page.hardware or page.software %}{% assign has_sidebar = true %}{% endif %}
+        <div class="cs-body-wrapper{% unless has_sidebar %} no-sidebar{% endunless %}">
             <div class="cs-narrative">
 {{ content }}
             </div>
 
+            {%- if has_sidebar %}
             <div class="cs-sidebar">
                 <div class="tech-box">
+                    {%- if page.hardware %}
                     <h3>Hardware Stack</h3>
                     <ul class="tech-list">
                         {%- for item in page.hardware %}
                         <li>{{ item }}</li>
                         {%- endfor %}
                     </ul>
+                    {%- endif %}
 
                     {%- if page.software %}
                     <h3 style="margin-top: 2.5rem;">Software & Logic</h3>
@@ -51,6 +55,7 @@ layout: default
                     {%- endif %}
                 </div>
             </div>
+            {%- endif %}
         </div>
 
         {%- if page.diagram %}
@@ -71,7 +76,7 @@ layout: default
             <div class="gallery-masonry">
                 {%- for figure in page.gallery %}
                 <div>
-                    <div class="gallery-item">
+                    <div class="gallery-item{% if figure.fit == 'whole' %} gallery-item-whole{% endif %}">
                         <img src="{{ figure.image }}" alt="{{ figure.alt }}">
                     </div>
                     <p class="gallery-caption"><strong>Fig {{ forloop.index }}.</strong> {{ figure.caption }}</p>
@@ -82,7 +87,7 @@ layout: default
         {%- endif %}
 
         <div class="pagination">
-            <a href="{{ page.back_link | default: '/portfolio.html' }}" class="btn-ghost">&larr; Back to Portfolio</a>
+            <a href="{{ page.back_link | default: '/work/' }}" class="btn-ghost">&larr; Back to Work</a>
             {%- if page.next_title %}
             <a href="{{ page.next_url }}" class="btn-ghost" style="color: var(--text-white);">Next Project: {{ page.next_title }} &rarr;</a>
             {%- endif %}

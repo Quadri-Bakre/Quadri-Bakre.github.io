@@ -1,0 +1,36 @@
+# Sections on the Work page, in this order.
+# A section only shows when at least one project in _projects/ has "group:" set to its key.
+# Sections with no projects yet stay hidden, so they're kept here ready for later.
+# Original wording from the old Portfolio page is kept in the comments.
+
+- key: network-engineering
+  title: Network Engineering
+  description: Networks designed, configured and commissioned for homes and yachts, carrying AV, control, CCTV and internet on one well-structured system.
+
+- key: rack-builds
+  title: Rack Builds
+  # Original title: Rack Build & Cable Infrastructure
+  # Original description: The foundation of any high-performance AV system is its physical infrastructure. This section details critical hardware builds, showcasing a strict adherence to thermal management, meticulous cable dressing, and absolute segregation of high-voltage and signal lines to guarantee an impeccable noise free AV system.
+  description: Racks built and dressed before they go to site, with power kept apart from data, short traceable patching and every lead labelled.
+
+- key: programming
+  title: System Programming & UI
+  description: "Hardware potential is only realized through intelligent, resilient control systems. Here, I showcase bespoke logic architectures developed within Crestron, Q-SYS, and Extron ecosystems. These projects highlight complex backend audio routing, environmental API bridging, and intuitive UI designs."
+
+- key: lighting
+  title: Lighting Control Panels
+  description: "Architectural and theatrical lighting integration requires precision and safety. This section showcases meticulously wired DMX relay panels, DALI gateways, and high-voltage lighting control enclosures designed for seamless triggering via primary AV and control platforms."
+
+- key: installations
+  title: Installations
+  description: "The culmination of infrastructure, programming, and commissioning. This gallery highlights fully integrated, active environments operating at peak performance. From discreet, high-end residential cinemas to complex corporate command centers."
+
+- key: software
+  title: Software & Automation
+  # Original title: Open-Source Commissioning Software
+  # Original description: A flawless handover requires rigorous verification against design intent. This category explores my proprietary open-source tools and scripts engineered to automate network audits, validate endpoint configurations, and eliminate human error.
+  description: Tools I've written to make commissioning faster and more reliable.
+
+- key: personal
+  title: Personal Projects
+  description: Things I've built for myself, to learn, design, programme and test.

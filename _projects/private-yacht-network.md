@@ -6,6 +6,12 @@ role: Design & Commissioning Engineer
 focus: Network / AV-over-IP / Control
 status: Commissioned & Handed Over
 
+# Cards on the home page and the Work page
+group: network-engineering
+featured: true
+order: 1
+summary: One converged network for audio, control, TV and owner and guest internet across a private yacht, with satellite failover and full commissioning.
+
 hero: /assets/images/yacht/yacht-rack-front.jpg
 hero_alt: Front of the finished rack, with power distribution, network switch, Crestron control processor and four Crestron NAX units
 hero_position: center 30%
@@ -52,7 +58,6 @@ gallery:
 diagram: diagrams/yacht-network.svg
 diagram_caption: Simplified diagram drawn for this page, showing device types and VLANs only.
 
-back_link: /portfolio.html
 ---
 ## The Brief
 

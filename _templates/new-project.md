@@ -22,6 +22,7 @@ gallery:
   - image: /assets/images/projects/project-name/detail-1.jpg
     alt: Short description of the photo
     caption: What the photo shows and why it matters.
+    # fit: whole   (optional: show the whole photo instead of filling the frame, e.g. a full-height rack)
 
 # Optional: a diagram saved in _includes/diagrams/ (an .svg file), shown above the photos
 # diagram: diagrams/project-name.svg

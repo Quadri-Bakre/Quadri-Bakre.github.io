@@ -5,9 +5,9 @@
   url: /
   key: home
 
-- title: Portfolio
-  url: /portfolio.html
-  key: portfolio
+- title: Work
+  url: /work/
+  key: work
 
 - title: Blog
   url: https://quadavpro.com

@@ -1,0 +1,30 @@
+{%- comment -%}
+  One project card, used on the home page (style="home") and the Work page (style="work").
+  Everything comes from the project's file in _projects/.
+{%- endcomment -%}
+{%- assign p = include.project -%}
+{%- assign img = p.card_image | default: p.hero -%}
+{%- assign alt = p.card_alt | default: p.hero_alt -%}
+{%- if include.style == "home" %}
+                    <div class="portfolio-card">
+                        <a href="{{ p.url }}">
+                            <div class="portfolio-img-wrapper">
+                                <img src="{{ img }}" alt="{{ alt }}" loading="lazy">
+                            </div>
+                        </a>
+                        <h4 class="bold-text">{{ p.title }}</h4>
+                        <p>{{ p.summary }}</p>
+                        <a href="{{ p.url }}" class="card-link">VIEW CASE STUDY &rarr;</a>
+                    </div>
+{%- else %}
+                <div class="project-card">
+                    <a href="{{ p.url }}">
+                        <div class="img-wrapper">
+                            <img src="{{ img }}" alt="{{ alt }}" loading="lazy">
+                        </div>
+                    </a>
+                    <h4>{{ p.title }}</h4>
+                    <p>{{ p.summary }}</p>
+                    <a href="{{ p.url }}" class="btn-outline-small">VIEW CASE STUDY &rarr;</a>
+                </div>
+{%- endif %}

@@ -3,9 +3,15 @@
 # everything below the second --- is the write-up, in normal Markdown.
 title: Residential AV Rack
 category: Residential
-role: Lead AV & Commissioning Engineer
+role: Lead Network & AV Commissioning Engineer
 focus: Control / AV-over-IP / Network
 status: Commissioned & Active
+
+# Cards on the home page and the Work page
+group: rack-builds
+featured: true
+order: 2
+summary: A 42U primary rack for a multi-floor home, with centralised audio routing over Crestron NAX, AES67 endpoints and Crestron Home control.
 
 # Keeps the page at its original web address
 permalink: /residential_av_rack.html
@@ -15,7 +21,7 @@ hero_alt: Residential AV and Network Rack
 
 hardware:
   - "Middle Atlantic 42U Enclosure"
-  - "Control4 CP4-R"
+  - "Crestron CP4-R"
   - "Crestron NAX Encoders/Decoders"
   - "Cisco Catalyst 1300 Switches"
   - "GUDE Power Distribution Units"
@@ -28,16 +34,24 @@ software:
 
 # Photos under "Technical Details". Figure numbers are added automatically.
 gallery:
-  - image: https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800
-    alt: "Cable Management Detail"
-    caption: "Detail of the right-channel signal dressing. CAT6a bundles are separated by destination to ensure rapid serviceability and fault finding."
-  - image: https://images.unsplash.com/photo-1563396983906-b3795482a59a?auto=format&fit=crop&q=80&w=800
-    alt: "Rear Rack View"
-    caption: "Rear view showing the amplifier tier and custom lacing bars utilized to support the weight of the heavy analog audio looms."
+  - image: /assets/images/residential-av-rack/residential-rack-full.jpg
+    alt: The full rack in the workshop before going to site
+    fit: whole
+    caption: The full rack, with power and switching at the top, sources and video distribution below, then the amplifiers, Crestron processor and NAX units.
+  - image: /assets/images/residential-av-rack/residential-rack-sources.jpg
+    alt: Power units, network switch, NVR and TV sources, each labelled
+    caption: Power units, network switch, NVR and TV sources, each one labelled.
+  - image: /assets/images/residential-av-rack/residential-amplifier-wiring.jpg
+    alt: Amplifier outputs wired in orange speaker cable
+    caption: Amplifier outputs in speaker cable, labelled and dressed along the rear.
+  - image: /assets/images/residential-av-rack/residential-speaker-terminations.jpg
+    alt: Labelled speaker cables in braided sleeving, tied to a lacing bar
+    caption: Speaker runs with heat-shrink labels, sleeved and tied to the lacing bar above the amplifiers.
+  - image: /assets/images/residential-av-rack/residential-cable-management.jpg
+    alt: Speaker and data cables in separate bundles tied to the rack frame
+    caption: Vertical cable management, with speaker and data runs kept in separate bundles.
 
-back_link: /portfolio.html#racks
-next_title: Theater Lighting Panel
-next_url: "#"
+back_link: /work/#rack-builds
 ---
 ## The Overview
 

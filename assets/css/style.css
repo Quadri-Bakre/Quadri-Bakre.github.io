@@ -84,6 +84,8 @@ nav {
 .portfolio-card:hover .portfolio-img-wrapper img { filter: brightness(1); transform: scale(1.05); }
 .portfolio-card h4 { font-size: 1.3rem; margin-bottom: 0.9rem; color: var(--text-white); line-height: 1.3; }
 .portfolio-card p { font-size: max(0.9rem, 15px); line-height: 1.6; color: var(--text-grey); }
+.portfolio-card .card-link { font-size: 0.9rem; font-weight: 700; margin-top: 1rem; display: inline-block; font-family: var(--font-mono); }
+.cs-body-wrapper.no-sidebar { grid-template-columns: 1fr; }
 
 .capability-card { padding: 2.5rem 2rem; display: flex; flex-direction: column; background-color: transparent; border-left: 2px solid transparent; transition: all 0.3s ease; }
 .capability-card:hover { background-color: rgba(0, 255, 204, 0.03); border-left: 2px solid var(--accent-mint); transform: translateY(-5px); }
@@ -162,6 +164,8 @@ nav {
 .gallery-masonry { display: grid; grid-template-columns: 1fr 1fr; gap: 3.125rem; }
 .gallery-item { width: 100%; height: 35rem; border: 1px solid rgba(0,255,204,0.2); }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+.gallery-item-whole { background-color: #0d1117; }
+.gallery-item-whole img { object-fit: contain; }
 .gallery-caption { margin-top: 1rem; font-size: max(1rem, 15px); color: var(--text-grey); font-family: var(--font-apple); }
 .pagination { display: flex; justify-content: space-between; align-items: center; padding: 4rem 0; border-top: 1px solid rgba(0,255,204,0.2); margin-bottom: 2rem; }
 .btn-ghost { font-size: 1.1rem; font-weight: bold; text-transform: uppercase; transition: color 0.2s; font-family: var(--font-mono); color: var(--text-grey);}

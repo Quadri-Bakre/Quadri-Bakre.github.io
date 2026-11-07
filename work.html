@@ -1,0 +1,34 @@
+---
+layout: default
+title: Work
+nav: work
+permalink: /work/
+---
+
+    <div class="section-wrapper-dark" style="padding-top: 2rem; padding-bottom: 3rem;">
+        <div class="container">
+            <h1 class="page-header">Work</h1>
+            <p class="page-sub">Case studies from my network, AV and control work. Each one covers what was needed, how it was designed and built, and how it was tested before handover. Client details are left out.</p>
+        </div>
+    </div>
+{%- assign number = 0 %}
+{%- for group in site.data.work_groups %}
+{%- assign projects = site.projects | where: "group", group.key | sort: "order" %}
+{%- if projects.size > 0 %}
+{%- assign number = number | plus: 1 %}
+{%- assign mod = number | modulo: 2 %}
+
+    <div id="{{ group.key }}" class="{% if mod == 1 %}section-wrapper-slate{% else %}section-wrapper-dark{% endif %}">
+        <div class="container">
+            <h2 class="category-header">{% if number < 10 %}0{% endif %}{{ number }} {{ group.title }}</h2>
+            <p class="category-desc">{{ group.description }}</p>
+
+            <div class="portfolio-grid">
+                {%- for project in projects %}
+                {% include project-card.html project=project style="work" %}
+                {%- endfor %}
+            </div>
+        </div>
+    </div>
+{%- endif %}
+{%- endfor %}
