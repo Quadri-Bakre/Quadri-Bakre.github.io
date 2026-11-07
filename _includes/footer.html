@@ -1,7 +1,7 @@
     <footer style="background-color: var(--bg-slate);">
         <div class="marquee-wrapper" style="background-color: var(--bg-slate);">
             <div class="marquee-text bold-text" style="color: var(--text-white);">
-                {% for pass in (1..2) %}{% for item in site.data.profile.marquee %}{{ item }} // {% endfor %}{% endfor %}
+                {% for pass in (1..2) %}{% for item in site.data.profile.marquee %}{{ item }} &nbsp;•&nbsp; {% endfor %}{% endfor %}
             </div>
         </div>
 

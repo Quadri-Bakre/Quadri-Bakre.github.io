@@ -62,9 +62,9 @@ current_focus: Network design, AV-over-IP, control programming, commissioning an
 
 # Words that scroll across the footer (shown twice so the loop looks continuous)
 marquee:
-  - NETWORK ARCHITECTURE
   - AV COMMISSIONING
   - AV PROGRAMMING
+  - NETWORK ARCHITECTURE
   - NETWORK SECURITY
   - WIRELESS & CONNECTIVITY
   - INFRASTRUCTURE
