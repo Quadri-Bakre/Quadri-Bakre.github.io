@@ -24,7 +24,7 @@ layout: default
         </div>
 
         <div class="cs-hero-img">
-            <img src="{{ page.hero }}" alt="{{ page.hero_alt }}">
+            <img src="{{ page.hero }}" alt="{{ page.hero_alt }}"{% if page.hero_position %} style="object-position: {{ page.hero_position }};"{% endif %}>
         </div>
 
         <div class="cs-body-wrapper">
@@ -41,15 +41,28 @@ layout: default
                         {%- endfor %}
                     </ul>
 
+                    {%- if page.software %}
                     <h3 style="margin-top: 2.5rem;">Software & Logic</h3>
                     <ul class="tech-list">
                         {%- for item in page.software %}
                         <li>{{ item }}</li>
                         {%- endfor %}
                     </ul>
+                    {%- endif %}
                 </div>
             </div>
         </div>
+
+        {%- if page.diagram %}
+
+        <div class="cs-gallery">
+            <h2>Network Overview</h2>
+            <div class="cs-diagram">
+                {% include {{ page.diagram }} %}
+            </div>
+            <p class="gallery-caption" style="text-align: center;">{{ page.diagram_caption }}</p>
+        </div>
+        {%- endif %}
 
         {%- if page.gallery %}
 

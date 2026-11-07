@@ -156,6 +156,8 @@ nav {
 .tech-list li { font-size: 1.05rem; margin-bottom: 1rem; display: flex; align-items: center; color: var(--text-white); font-family: var(--font-mono);}
 .tech-list li::before { content: '>'; color: var(--accent-mint); margin-right: 0.8rem; font-weight: bold; }
 .cs-gallery { margin-bottom: 6.25rem; }
+.cs-diagram { max-width: 60rem; margin: 0 auto; border: 1px solid rgba(0,255,204,0.2); padding: 1.5rem; background-color: #161b22; }
+.cs-diagram svg { display: block; width: 100%; height: auto; }
 .cs-gallery h2 { font-size: 2.5rem; margin-bottom: 2.5rem; color: var(--text-white); text-align: center; text-transform: uppercase; letter-spacing: 0.1rem; border-bottom: 1px solid rgba(0,255,204,0.2); padding-bottom: 1rem;}
 .gallery-masonry { display: grid; grid-template-columns: 1fr 1fr; gap: 3.125rem; }
 .gallery-item { width: 100%; height: 35rem; border: 1px solid rgba(0,255,204,0.2); }

@@ -8,6 +8,8 @@ status: Commissioned & Active
 
 hero: /assets/images/projects/project-name/hero.jpg
 hero_alt: Short description of the main photo
+# Optional: which part of a tall photo to show in the wide banner, e.g. center 30%
+# hero_position: center 30%
 
 hardware:
   - First item
@@ -21,7 +23,11 @@ gallery:
     alt: Short description of the photo
     caption: What the photo shows and why it matters.
 
-# Optional
+# Optional: a diagram saved in _includes/diagrams/ (an .svg file), shown above the photos
+# diagram: diagrams/project-name.svg
+# diagram_caption: What the diagram shows.
+
+# Optional (leave out software: if there's nothing to list)
 next_title: Name of the next project
 next_url: /projects/next-project-name/
 ---
