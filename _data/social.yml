@@ -1,0 +1,32 @@
+# Social icons in the footer, in this order.
+# url: the full profile address, or "#" until there is one.
+# icon: matches a file in _includes/icons/
+# outline: true adds a thin border (used on the black icons so they show on the dark footer)
+
+- name: Facebook
+  icon: facebook
+  url: "#"
+  colour: "#1877F2"
+
+- name: X
+  icon: x
+  url: "#"
+  colour: "#000000"
+  outline: true
+
+- name: LinkedIn
+  icon: linkedin
+  url: "#"
+  colour: "#0A66C2"
+
+- name: Medium
+  icon: medium
+  url: "#"
+  colour: "#000000"
+  outline: true
+
+- name: GitHub
+  icon: github
+  url: https://github.com/Quadri-Bakre
+  colour: "#000000"
+  outline: true

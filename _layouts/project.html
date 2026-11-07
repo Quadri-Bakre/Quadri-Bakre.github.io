@@ -1,0 +1,77 @@
+---
+layout: default
+---
+    <div class="container cs-header">
+        <h1 class="cs-title">{{ page.title }}</h1>
+
+        <div class="cs-meta-grid">
+            <div class="meta-block">
+                <span>Category</span>
+                <strong>{{ page.category }}</strong>
+            </div>
+            <div class="meta-block">
+                <span>My Role</span>
+                <strong>{{ page.role }}</strong>
+            </div>
+            <div class="meta-block">
+                <span>System Focus</span>
+                <strong>{{ page.focus }}</strong>
+            </div>
+            <div class="meta-block">
+                <span>Status</span>
+                <strong style="color: var(--accent-mint);">{{ page.status }}</strong>
+            </div>
+        </div>
+
+        <div class="cs-hero-img">
+            <img src="{{ page.hero }}" alt="{{ page.hero_alt }}">
+        </div>
+
+        <div class="cs-body-wrapper">
+            <div class="cs-narrative">
+{{ content }}
+            </div>
+
+            <div class="cs-sidebar">
+                <div class="tech-box">
+                    <h3>Hardware Stack</h3>
+                    <ul class="tech-list">
+                        {%- for item in page.hardware %}
+                        <li>{{ item }}</li>
+                        {%- endfor %}
+                    </ul>
+
+                    <h3 style="margin-top: 2.5rem;">Software & Logic</h3>
+                    <ul class="tech-list">
+                        {%- for item in page.software %}
+                        <li>{{ item }}</li>
+                        {%- endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        {%- if page.gallery %}
+
+        <div class="cs-gallery">
+            <h2>Technical Details</h2>
+            <div class="gallery-masonry">
+                {%- for figure in page.gallery %}
+                <div>
+                    <div class="gallery-item">
+                        <img src="{{ figure.image }}" alt="{{ figure.alt }}">
+                    </div>
+                    <p class="gallery-caption"><strong>Fig {{ forloop.index }}.</strong> {{ figure.caption }}</p>
+                </div>
+                {%- endfor %}
+            </div>
+        </div>
+        {%- endif %}
+
+        <div class="pagination">
+            <a href="{{ page.back_link | default: '/portfolio.html' }}" class="btn-ghost">&larr; Back to Portfolio</a>
+            {%- if page.next_title %}
+            <a href="{{ page.next_url }}" class="btn-ghost" style="color: var(--text-white);">Next Project: {{ page.next_title }} &rarr;</a>
+            {%- endif %}
+        </div>
+    </div>

@@ -1,0 +1,11 @@
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+
+    <script>
+        // Clear the form if someone comes back to the page with the browser's back button
+        window.addEventListener('pageshow', function() {
+            const contactForm = document.querySelector('form');
+            if (contactForm) {
+                contactForm.reset();
+            }
+        });
+    </script>

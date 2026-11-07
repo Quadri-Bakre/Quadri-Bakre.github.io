@@ -1,0 +1,28 @@
+    <footer style="background-color: var(--bg-slate);">
+        <div class="marquee-wrapper" style="background-color: var(--bg-slate);">
+            <div class="marquee-text bold-text" style="color: var(--text-white);">
+                {% for pass in (1..2) %}{% for item in site.data.profile.marquee %}{{ item }} // {% endfor %}{% endfor %}
+            </div>
+        </div>
+
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--accent-mint); padding-top: 2.5rem;">
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <p style="color: var(--text-white); font-weight: 800; font-family: var(--font-mono); line-height: 1.2; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1rem;">
+                    {{ site.data.profile.name }}
+                </p>
+            </div>
+
+            <div style="text-align: center;">
+                <p class="bold-text" style="font-size: 1rem; color: var(--text-grey);">&copy; {{ site.time | date: "%Y" }} {{ site.data.profile.name }}. All Rights Reserved. | <a href="/privacy-policy.html" style="color: var(--text-grey); text-decoration: underline;">Privacy Policy</a></p>
+                <p class="bold-text" style="font-size: 1rem; margin-top: 0.3rem; color: var(--accent-mint);">{{ site.data.profile.footer_status }}</p>
+            </div>
+
+            <div class="social-icons">
+                {%- for link in site.data.social %}
+                <a href="{{ link.url }}"{% if link.url contains "http" %} target="_blank" rel="noopener noreferrer"{% endif %} class="social-icon" style="background-color: {{ link.colour }};{% if link.outline %} border: 1px solid rgba(255,255,255,0.2);{% endif %}" aria-label="{{ link.name }}">
+                    {% include icons/{{ link.icon }}.svg %}
+                </a>
+                {%- endfor %}
+            </div>
+        </div>
+    </footer>

@@ -1,0 +1,36 @@
+# Site settings for quadribakre.com
+# Changes to this file need the preview server restarting (Ctrl+C, then run it again).
+
+title: Quadri Bakre
+url: "https://www.quadribakre.com"
+baseurl: ""
+
+markdown: kramdown
+
+# Each file in _projects becomes its own case-study page
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Every project uses the case-study layout and highlights "Portfolio" in the menu
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      nav: portfolio
+
+# Files that stay in the repo but are not part of the website
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - .jekyll-cache
+  - .sass-cache
+  - .vscode
+  - .obsidian
+  - node_modules

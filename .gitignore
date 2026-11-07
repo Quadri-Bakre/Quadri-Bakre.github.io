@@ -1,0 +1,19 @@
+# Built site and Jekyll working files (recreated on every build)
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Installed gems
+vendor/
+.bundle/
+
+# Operating system and editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+.obsidian/
+
+# Private material never belongs in this public repo
+About Me/
+private/

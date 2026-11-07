@@ -1,0 +1,9 @@
+    <nav>
+        <div class="container" style="display: flex; justify-content: center; width: 100%;">
+            <div class="nav-links">
+                {%- for item in site.data.navigation %}
+                <a href="{{ item.url }}"{% if item.key == page.nav %} class="active"{% endif %}>{{ item.title }}</a>
+                {%- endfor %}
+            </div>
+        </div>
+    </nav>

@@ -1,0 +1,14 @@
+# Menu at the top of every page, in this order.
+# "key" is matched against "nav:" in a page's front matter to underline the current page.
+
+- title: Home
+  url: /
+  key: home
+
+- title: Portfolio
+  url: /portfolio.html
+  key: portfolio
+
+- title: Blog
+  url: https://quadavpro.com
+  key: blog

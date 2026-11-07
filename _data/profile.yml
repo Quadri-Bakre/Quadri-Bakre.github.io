@@ -1,0 +1,22 @@
+# Personal details used across the whole site.
+# Change something here once and every page picks it up.
+
+name: Quadri Bakre
+headline: AV Systems Engineer        # shown in the browser tab on the home page
+email: hello@quadribakre.com
+location: United Kingdom
+
+# Small status line in the footer
+footer_status: "STATUS: OPERATIONAL // VER: 2.4.0"
+
+# Words that scroll across the footer (shown twice so the loop looks continuous)
+marquee:
+  - AV COMMISSIONING
+  - AV PROGRAMMING
+  - SOFTWARE ENGINEERING
+  - INFRASTRUCTURE
+  - QA & SYSTEM TESTING
+  - NETWORK ARCHITECTURE
+  - TROUBLESHOOTING
+  - DOCUMENTATION
+  - END USER TRAINING
