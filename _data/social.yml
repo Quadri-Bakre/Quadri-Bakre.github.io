@@ -1,5 +1,5 @@
 # Social icons in the footer, in this order.
-# url: the full profile address, or "#" until there is one.
+# url: the full profile address. Leave it as "" and the icon is hidden until there is one.
 # icon: matches a file in _includes/icons/
 # outline: true adds a thin border (used on the black icons so they show on the dark footer)
 
@@ -10,7 +10,7 @@
 
 - name: X
   icon: x
-  url: "#"
+  url: ""
   colour: "#000000"
   outline: true
 

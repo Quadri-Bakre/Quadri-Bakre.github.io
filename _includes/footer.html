@@ -19,6 +19,7 @@
 
             <div class="social-icons">
                 {%- for link in site.data.social %}
+                {%- if link.url == "" or link.url == "#" %}{% continue %}{% endif %}
                 <a href="{{ link.url }}"{% if link.url contains "http" %} target="_blank" rel="noopener noreferrer"{% endif %} class="social-icon" style="background-color: {{ link.colour }};{% if link.outline %} border: 1px solid rgba(255,255,255,0.2);{% endif %}" aria-label="{{ link.name }}">
                     {% include icons/{{ link.icon }}.svg %}
                 </a>
