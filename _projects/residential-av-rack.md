@@ -35,7 +35,7 @@ gallery:
     alt: "Rear Rack View"
     caption: "Rear view showing the amplifier tier and custom lacing bars utilized to support the weight of the heavy analog audio looms."
 
-back_link: /portfolio.html#infrastructure
+back_link: /portfolio.html#racks
 next_title: Theater Lighting Panel
 next_url: "#"
 ---
