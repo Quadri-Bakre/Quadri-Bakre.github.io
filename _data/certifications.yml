@@ -20,6 +20,7 @@ groups:
 
   - name: Training
     items:
+      - CEDIA Fibre Termination Training
       - AVIXA AV Infrastructure Essentials
       - AVIXA Microsoft Teams Rooms Training
 
