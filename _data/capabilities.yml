@@ -1,50 +1,64 @@
 # The "Core capabilities" cards on the home page, in this order.
 # icon: matches a file in _includes/icons/ named cap-<icon>.svg
+# page: (optional) the name of a file in _capabilities/ without .md, e.g. page: av-commissioning
+#       When set, the card links to that page. Leave it out until the page is written.
 
 - title: AV COMMISSIONING
   icon: av-commissioning
+  page: av-commissioning
   text: Commissioning AV and control systems against structured test schedules, then handing over with as-built records, configuration backups and client training.
 
 - title: AV PROGRAMMING
   icon: av-programming
+  page: av-programming
   text: Programming and commissioning Crestron Home, Control4 and Lutron systems, and integrating HVAC controls such as Polarbear and Heatmiser.
 
 - title: NETWORK ARCHITECTURE
   icon: network-architecture
+  page: network-architecture
   text: Segmented networks for homes and yachts. VLAN and IP plans, Layer 3 core switching, enterprise Wi-Fi, dual-WAN failover, and the multicast and QoS settings AV-over-IP depends on.
 
 - title: NETWORK SECURITY
   icon: network-security
+  page: network-security
   text: Guest isolation with ACLs, separate VLANs for CCTV, AV and control, firewall and VPN configuration on WatchGuard and DrayTek, and SSH-only device management.
 
 - title: WIRELESS & CONNECTIVITY
   icon: wireless
+  page: wireless-connectivity
   text: Enterprise Wi-Fi on Ruckus, Ubiquiti UniFi and Aruba, with coverage surveys and roaming tests on every floor or deck, plus dual-WAN failover on Pepwave with Starlink, land and marine.
 
 - title: INFRASTRUCTURE
   icon: infrastructure
+  page: infrastructure
   text: Rack builds done off-site before deployment. Structured cabling, terminations, labelling, PoE budgeting and strict separation of high and low voltage.
 
 - title: QA & SYSTEM TESTING
   icon: qa-testing
+  page: qa-system-testing
   text: Testing every layer before sign-off. DHCP per VLAN, guest isolation, WAN failover, Wi-Fi coverage and roaming, spanning tree, PoE, IGMP and PTP clock lock.
 
 - title: TROUBLESHOOTING
   icon: troubleshooting
+  page: troubleshooting
   text: Fault isolation across switching, Wi-Fi, WAN and AV streams, from interface error counters to multicast and clock sync.
 
 - title: SYSTEMS INTEGRATION
   icon: integration
+  page: systems-integration
   text: Bringing lighting (Lutron QSx, RA2, RA3), HVAC, CCTV (Hikvision) and access control onto one well-structured network and control platform.
 
 - title: AUTOMATION & SCRIPTING
   icon: automation
+  page: automation-scripting
   text: Python tooling for network audits and commissioning. SSH and HTTP device access with Netmiko and Paramiko, FastAPI, Git and Docker.
 
 - title: DOCUMENTATION
   icon: documentation
+  page: documentation
   text: IP schedules, topology and connectivity drawings, as-built commissioning records and configuration backups for every handover.
 
 - title: END USER TRAINING
   icon: training
+  page: end-user-training
   text: Training clients on their systems at handover, so the technology is easy to live with.

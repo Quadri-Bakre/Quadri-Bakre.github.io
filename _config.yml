@@ -7,20 +7,31 @@ baseurl: ""
 
 markdown: kramdown
 
-# Each file in _projects becomes its own case-study page
+# Each file in _projects becomes its own case-study page.
+# Each file in _capabilities becomes a page about how I work in that area,
+# linked from its card on the home page (see "page:" in _data/capabilities.yml).
 collections:
   projects:
     output: true
     permalink: /projects/:name/
+  capabilities:
+    output: true
+    permalink: /capabilities/:name/
 
-# Every project uses the case-study layout and highlights "Portfolio" in the menu
+# Every project uses the case-study layout and highlights "Work" in the menu.
+# Every capability page uses the capability layout.
 defaults:
   - scope:
       path: ""
       type: projects
     values:
       layout: project
-      nav: portfolio
+      nav: work
+  - scope:
+      path: ""
+      type: capabilities
+    values:
+      layout: capability
 
 # Files that stay in the repo but are not part of the website
 exclude:

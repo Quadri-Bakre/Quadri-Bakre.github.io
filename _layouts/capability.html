@@ -1,0 +1,73 @@
+---
+layout: default
+---
+{%- comment -%}
+  A page about one core capability: how I work, my method and why.
+  The icon and card text come from _data/capabilities.yml (matched by "page:").
+{%- endcomment -%}
+{%- assign card = site.data.capabilities | where: "page", page.slug | first %}
+    <div class="container cs-header">
+        <div class="cap-page-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" aria-hidden="true">
+                {% include icons/cap-{{ card.icon }}.svg %}
+            </svg>
+        </div>
+        <span class="cap-page-label">CORE CAPABILITY</span>
+        <h1 class="cs-title">{{ page.title }}</h1>
+        <p class="cap-page-lead">{{ page.summary | default: card.text }}</p>
+
+        {%- assign has_sidebar = false %}{% if page.related or page.writing %}{% assign has_sidebar = true %}{% endif %}
+        <div class="cs-body-wrapper{% unless has_sidebar %} no-sidebar{% endunless %}">
+            <div class="cs-narrative">
+{{ content }}
+            </div>
+
+            {%- if has_sidebar %}
+            <div class="cs-sidebar">
+                <div class="tech-box">
+                    {%- if page.related %}
+                    <h3>Related Work</h3>
+                    <ul class="tech-list">
+                        {%- for slug in page.related %}
+                        {%- assign project = site.projects | where_exp: "p", "p.slug == slug" | first %}
+                        {%- if project %}
+                        <li><a href="{{ project.url }}">{{ project.title }}</a></li>
+                        {%- endif %}
+                        {%- endfor %}
+                    </ul>
+                    {%- endif %}
+
+                    {%- if page.writing %}
+                    <h3{% if page.related %} style="margin-top: 2.5rem;"{% endif %}>From My Blog</h3>
+                    <ul class="tech-list">
+                        {%- for post in page.writing %}
+                        <li><a href="{{ post.url }}" target="_blank" rel="noopener">{{ post.title }} &nearr;</a></li>
+                        {%- endfor %}
+                    </ul>
+                    {%- endif %}
+                </div>
+            </div>
+            {%- endif %}
+        </div>
+
+        {%- comment -%} Next capability that has its own page, in home page order {%- endcomment -%}
+        {%- assign linked = site.data.capabilities | where_exp: "c", "c.page" %}
+        {%- assign next_card = nil %}
+        {%- for c in linked %}
+        {%- if c.page == page.slug %}
+        {%- assign i = forloop.index0 | plus: 1 %}
+        {%- if i >= linked.size %}{% assign i = 0 %}{% endif %}
+        {%- assign next_card = linked[i] %}
+        {%- endif %}
+        {%- endfor %}
+
+        <div class="pagination">
+            <a href="/#capabilities" class="btn-ghost">&larr; All Capabilities</a>
+            {%- if next_card and next_card.page != page.slug %}
+            {%- assign next_page = site.capabilities | where_exp: "c", "c.slug == next_card.page" | first %}
+            {%- if next_page %}
+            <a href="{{ next_page.url }}" class="btn-ghost" style="color: var(--text-white);">Next: {{ next_page.title }} &rarr;</a>
+            {%- endif %}
+            {%- endif %}
+        </div>
+    </div>

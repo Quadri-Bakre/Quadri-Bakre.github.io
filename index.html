@@ -82,19 +82,32 @@ contact_form: true
 
     <div id="capabilities" class="section-wrapper-slate">
         <div class="container">
-            <h2 class="section-header" style="margin-bottom: 5rem; color: var(--text-white);">CORE CAPABILITIES</h2>
-            
-            <div class="grid-3">
+            <h2 class="section-header" style="margin-bottom: 3rem; color: var(--text-white);">CORE CAPABILITIES</h2>
+
+            <!-- Desktop: 4 per row with the short text. Phones: 2 per row, icon and title only.
+                 A card links to its own page when "page:" is set in _data/capabilities.yml. -->
+            <div class="cap-grid">
                 {%- for card in site.data.capabilities %}
-                <div class="capability-card">
-                    <div class="icon-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" style="width: 100%; height: 100%;" aria-hidden="true">
+                {%- assign cap_page = nil %}
+                {%- if card.page %}{% assign cap_page = site.capabilities | where_exp: "c", "c.slug == card.page" | first %}{% endif %}
+                {%- if cap_page %}
+                <a class="cap-card cap-card-link" href="{{ cap_page.url }}">
+                {%- else %}
+                <div class="cap-card">
+                {%- endif %}
+                    <span class="cap-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent-mint)" stroke-width="2" aria-hidden="true">
                             {% include icons/cap-{{ card.icon }}.svg %}
                         </svg>
-                    </div>
+                    </span>
                     <h3>{{ card.title }}</h3>
                     <p>{{ card.text }}</p>
+                    {%- if cap_page %}
+                    <span class="cap-more">READ MORE &rarr;</span>
+                </a>
+                    {%- else %}
                 </div>
+                    {%- endif %}
                 {%- endfor %}
             </div>
         </div>
