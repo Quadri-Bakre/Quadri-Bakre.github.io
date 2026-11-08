@@ -4,7 +4,7 @@ title: "Private Yacht: Converged AV and Network"
 category: Marine
 role: Design & Commissioning Engineer
 focus: Network / AV-over-IP / Control
-status: Commissioned & Handed Over
+status: Commissioned & Active
 
 # Cards on the home page and the Work page
 group: network-engineering

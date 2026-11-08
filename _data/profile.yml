@@ -55,7 +55,7 @@ skills_grid:
     detail: Test schedules, as-built records, config backups
 
 # Leave empty until the web CV is ready; the Download CV button only shows when this is set
-cv_file: ""
+cv_file: /assets/cv/quadri-bakre-cv.pdf
 
 # ---------- Contact section ----------
 current_focus: Network design, AV-over-IP, control programming, commissioning and QA

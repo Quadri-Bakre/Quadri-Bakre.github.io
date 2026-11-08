@@ -1,7 +1,7 @@
 ---
 # Case study page. The part between the --- lines is the page's details (Obsidian shows them as Properties);
 # everything below the second --- is the write-up, in normal Markdown.
-title: Residential AV Rack
+title: Residential AV and Network
 category: Residential
 role: Lead Network & AV Commissioning Engineer
 focus: Control / AV-over-IP / Network
