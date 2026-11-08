@@ -1,0 +1,22 @@
+    <script>
+        // Theme: follows the device setting unless the visitor has picked one with the menu button.
+        (function () {
+            var saved = null;
+            try { saved = localStorage.getItem('theme'); } catch (e) {}
+            if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
+            function current() {
+                var t = document.documentElement.getAttribute('data-theme');
+                if (t) return t;
+                return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            }
+            function mark() { document.documentElement.setAttribute('data-theme-current', current()); }
+            mark();
+            window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', mark);
+            window.toggleTheme = function () {
+                var next = current() === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+                mark();
+            };
+        })();
+    </script>
