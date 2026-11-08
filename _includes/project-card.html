@@ -5,10 +5,12 @@
 {%- assign p = include.project -%}
 {%- assign img = p.card_image | default: p.hero -%}
 {%- assign alt = p.card_alt | default: p.hero_alt -%}
+{%- comment -%} card_fit: whole shows the whole picture; it follows hero_fit unless set. {%- endcomment -%}
+{%- assign fit = p.card_fit | default: p.hero_fit -%}
 {%- if include.style == "home" %}
                     <div class="portfolio-card">
                         <a href="{{ p.url }}">
-                            <div class="portfolio-img-wrapper">
+                            <div class="portfolio-img-wrapper{% if fit == 'whole' %} card-img-whole{% endif %}">
                                 <img src="{{ img }}" alt="{{ alt }}" loading="lazy">
                             </div>
                         </a>
@@ -19,7 +21,7 @@
 {%- else %}
                 <div class="project-card">
                     <a href="{{ p.url }}">
-                        <div class="img-wrapper">
+                        <div class="img-wrapper{% if fit == 'whole' %} card-img-whole{% endif %}">
                             <img src="{{ img }}" alt="{{ alt }}" loading="lazy">
                         </div>
                     </a>

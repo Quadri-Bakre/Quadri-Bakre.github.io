@@ -12,6 +12,8 @@ hero_alt: Short description of the main photo
 # hero_position: center 30%
 # Optional: show the whole banner photo instead of filling the frame (good for tall rack photos)
 # hero_fit: whole
+# Optional: the card on the Home and Work pages follows hero_fit. To set it separately:
+# card_fit: whole
 
 hardware:
   - First item
