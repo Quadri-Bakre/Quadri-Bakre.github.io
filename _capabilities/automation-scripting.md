@@ -1,6 +1,8 @@
 ---
 title: Automation & Scripting
 summary: Python tooling for network audits and commissioning. SSH and HTTP device access with Netmiko and Paramiko, FastAPI, Git and Docker.
+related:
+  - afara
 ---
 ## How I approach it
 1. **Automate the repetitive checks.** Logging into every device to check firmware, VLANs, PoE and errors is slow and easy to get wrong by hand.
