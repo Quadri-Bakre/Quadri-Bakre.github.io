@@ -10,6 +10,8 @@ hero: /assets/images/projects/project-name/hero.jpg
 hero_alt: Short description of the main photo
 # Optional: which part of a tall photo to show in the wide banner, e.g. center 30%
 # hero_position: center 30%
+# Optional: show the whole banner photo instead of filling the frame (good for tall rack photos)
+# hero_fit: whole
 
 hardware:
   - First item

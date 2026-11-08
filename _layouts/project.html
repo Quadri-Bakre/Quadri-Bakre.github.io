@@ -23,7 +23,7 @@ layout: default
             </div>
         </div>
 
-        <div class="cs-hero-img">
+        <div class="cs-hero-img{% if page.hero_fit == 'whole' %} cs-hero-whole{% endif %}">
             <img src="{{ page.hero }}" alt="{{ page.hero_alt }}"{% if page.hero_position %} style="object-position: {{ page.hero_position }};"{% endif %}>
         </div>
 

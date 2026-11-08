@@ -14,7 +14,7 @@ summary: One converged network for audio, control, TV and owner and guest intern
 
 hero: /assets/images/yacht/yacht-rack-front.jpg
 hero_alt: Front of the finished rack, with power distribution, network switch, Crestron control processor and four Crestron NAX units
-hero_position: center 30%
+hero_fit: whole
 
 hardware:
   - Cisco Layer 3 core switch
